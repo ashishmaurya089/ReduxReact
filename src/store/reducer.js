@@ -5,11 +5,14 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   const newState = { ...state };
 
-  if (action.type === 'ADD') {
-    newState.age++;
-  }
-  if (action.type === 'SUB') {
-    newState.age--;
+  switch (action.type) {
+    case 'ADD':
+      newState.age++;
+      break;
+
+    case 'SUB':
+      newState.age--;
+      break;
   }
 
   return newState;
